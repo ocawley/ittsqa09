@@ -1,0 +1,44 @@
+Number of nodes = 11
+
+Basis paths:
+1,2,4,11
+1,2,3,5,11
+1,2,3,6,7,11
+1,2,3,6,8,9,11
+1,2,3,6,8,10,11
+
+CCG:
+4R+1 = 5
+4N+1 = 5
+13E + 1 = 14
+
+Test paths:
+
+1,2,4,11
+input -10 -2
+Expected: Invalid Input
+Result: Invalid Input
+
+1,2,3,5,11
+input 39 39
+Expected: Fail
+Result: Fail
+
+1,2,3,6,7,11
+input 41 41
+Expected: Fail
+Result: Fail
+
+1,2,3,6,8,9,11
+input 60 60
+expected pass
+result pass
+
+1,2,3,6,8,10,11
+input 100 100
+expected Pass with distinction
+result Pass with distinction
+
+
+
+
