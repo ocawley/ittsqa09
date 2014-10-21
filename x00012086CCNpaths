@@ -1,0 +1,60 @@
+public class grades
+{
+	public static void main(String[] args) {
+		String grade = new String();
+		
+		int exam, ca;
+
+		exam = Integer.parseInt(args[0]);
+		ca = Integer.parseInt(args[1]);
+
+		if (exam < 0 || exam > 100 || ca < 0 || ca > 100) {
+
+			grade = "Invalid input";
+		} else if (exam < 40 || ca < 40) {
+			grade = "Component Fail";
+		} else {
+			int combined = (60 * exam + 40 * ca) / 100;
+			if (combined < 60) {
+				grade = "Fail";
+			} else if (combined >= 60 && combined <= 80) {
+				grade = "Pass";
+			} else if (combined > 80 && combined <= 100) {
+				grade = "Pass with distinction";
+			}
+		}
+		System.out.println(grade);
+	}
+Basis Paths
+
+test one 1,2,3,11
+test two 1,2,4,5,11
+test three 1,2,4,6,7,11
+test four 1,2,4,6,8,9,11
+test five 1,2,4,6,8,10,11
+
+
+test one Path 1,2,3,11
+Input: -10 -12
+Expected output: Invalid input
+Result:Invalid input
+
+test two Path 1,2,4,5,11
+Input:39 39
+Expected output:Component Fail
+Result:Component Fail
+
+test three Path 1,2,4,6,7,11
+Input:41 41
+Expected output:Fail
+Result:Fail
+
+test four Path 1,2,4,6,8,9,11
+Input:60 60
+Expected output:Pass
+Result:Pass
+
+test five Path 1,2,4,6,8,10,11
+Input:81 81
+Expected output:Pass with distinction
+Result:Pass with distinction
